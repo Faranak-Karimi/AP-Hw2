@@ -1,0 +1,55 @@
+#include<iostream>
+#include<iomanip>
+#include<fstream>
+#include<vector>
+
+int getmin (std::vector<int>);
+int main()
+{
+  int a{1};
+  std::vector<int> t, s;
+
+  while(1)
+    {
+      std::cin>>a;
+      s.push_back(a);
+      if(a==0)
+      break;
+    }
+  
+   std::cout<<s.size();
+   std::cout<<std::endl;
+      while(s.size()!=0)
+	{
+      
+	for(size_t i{} ; i<s.size() ; i++)
+	  {
+   
+	  if(getmin(s)== s.at(i))
+	    {
+	 
+	   t.push_back(s.at(i));
+	      s.erase(s.begin() +i);
+	}
+    
+     }
+	}
+      
+    for(size_t j{} ; j<t.size() ; j++)
+      std::cout<<"   "<<t.at(j)<<"  ";
+    std::cout<<std::endl<<"****";
+ 	 
+}
+// this function gets the minimum of a vector
+
+int   getmin (std::vector<int>  v)
+{
+  int ans{2};
+ ans= v.at(0);
+ for(size_t i{} ; i<v.size() ; i++ )
+    {
+	if(v.at(i) <= ans )
+	  ans=v.at(i);
+    }
+  return ans;
+}

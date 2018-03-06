@@ -1,0 +1,16 @@
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall -c
+LXXFLAGS = -std=c++17
+OBJECTS = main.o queue.o
+TARGET = main
+
+
+$(TARGET): $(OBJECTS)
+	$(CXX) $(LXXFLAGS) $(OBJECTS) -o $(TARGET)
+main.o: main.cpp queue.h queue.cpp
+	$(CXX) $(CXXFLAGS) main.cpp
+Queue.o: queue.cpp
+	$(CXX) $(CXXFLAGS) Queue.cpp
+clean:
+	rm -f $(TARGET) $(OBJECTS)
+

@@ -1,0 +1,43 @@
+ #include<iostream>
+#include<iomanip>
+#include<fstream>
+
+int main()
+{
+  // int i{};
+
+  std::string s[100] ;
+  // int vow[60];
+  int cons[76];
+  std::ifstream myf {"Error_find.txt"};
+    if(!myf)
+      {
+	std::cout<<"not found"<<std::endl;
+	return 1;
+      }
+
+        for(int i{}; i<60 ;i++)
+  {
+    
+   
+    myf>>s[i];
+  
+
+     for(size_t j{} ; j<s[i].length();j++)
+       {
+	 if(std::isalpha(s[i][j]))
+	   {
+	      cons[i]++;
+       	if(s[i][j]=='a' || s[i][j]=='e' || s[i][j]=='o' || s[i][j]=='i' || s[i][j]=='u')
+	    cons[i]=0;
+	if(std::isupper(s[i][j]))
+	   cons[i]=0;
+	   }
+       }
+     
+	 if((cons[i]>=5))
+       std::cout<<s[i]<<std::endl;
+  }
+  
+  myf.close();
+}

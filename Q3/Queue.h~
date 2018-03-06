@@ -1,0 +1,21 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <fstream>
+#include <vector>
+
+class Queue
+{
+
+  
+ public :
+  int  size {};
+  std::vector<double> members ;
+  Queue(std::string name);
+  Queue();
+   double  mem ();
+   void displayQueue();
+   void enQueue(double);
+   double deQueue();
+};
+
